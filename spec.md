@@ -3,6 +3,8 @@
 ## Table of Contents
 
 - [Overview](#overview)
+- [Syntax](#syntax)
+  - [Character Set](#character-set)
 
 ## Overview
 
