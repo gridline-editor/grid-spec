@@ -5,6 +5,7 @@
 *.log
 *.toc
 *.pdf
+aux/
 
 # bear
 compile_commands.json
