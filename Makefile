@@ -2,7 +2,7 @@
 src_dir := src
 pdf_dir :=
 aux_dir := aux
-aux_dirs := $(aux_dir) $(addprefix $(aux_dir), $(src_dir))
+aux_dirs := $(aux_dir) $(addprefix $(aux_dir)/, $(src_dir))
 
 # project
 project_name := grid_spec
