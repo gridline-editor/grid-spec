@@ -1,12 +1,11 @@
 # paths
 src_dir := src
-pdf_dir :=
 aux_dir := aux
 aux_dirs := $(aux_dir) $(addprefix $(aux_dir)/, $(src_dir))
 
 # project
 project_name := grid_spec
-project := $(pdf_dir)$(project_name).pdf
+project := $(project_name).pdf
 
 # sources
 sources := $(wildcard $(src_dir)/*.tex $(src_dir)/**/*.tex)
