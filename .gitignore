@@ -1,0 +1,11 @@
+# latex
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.toc
+*.pdf
+
+# bear
+compile_commands.json
+.cache/
