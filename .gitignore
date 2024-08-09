@@ -10,3 +10,6 @@ aux/
 # bear
 compile_commands.json
 .cache/
+
+# macos
+.DS_Store
