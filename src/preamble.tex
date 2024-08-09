@@ -1,0 +1,25 @@
+% font
+\usepackage[T1]{fontenc}
+\usepackage{arev}
+\renewcommand{\familydefault}{\sfdefault}
+
+% language
+\usepackage[english]{babel}
+
+% formating
+\usepackage[margin=1in]{geometry}
+
+% vertical padding for table rows
+\renewcommand{\arraystretch}{1.75}
+
+% line spacing
+\usepackage{setspace}
+\doublespacing
+
+% delimit paragraphs with vertical space
+\usepackage{parskip}
+
+% heading styling
+\usepackage{titlesec}
+\titlelabel{\thetitle\quad|\quad}
+\titleformat{\chapter}{\normalfont\huge\bfseries}{\thesection\quad|}{20pt}{\Huge}
