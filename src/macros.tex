@@ -4,3 +4,23 @@
 \newcommand{\specverpatch}{1}
 \newcommand{\specverlabel}[1]{-#1}
 \newcommand{\specver}{\specvermajor.\specverminor.\specverpatch\specverlabel{alpha}}
+
+% introduce a key term
+% #1 base word
+% #2 inflection
+\newcommand{\introref}[2]{%
+	\expandafter\gdef\csname #1_intro\endcsname{\textit{#1#2}}%
+    \expandafter\gdef\csname #1_ref\endcsname{1}%
+	\textit{#1#2}%
+}
+
+% Define the reference text
+% #1 base word
+% #2 inflection
+\newcommand{\reftext}[2]{%
+    \ifcsname #1_ref\endcsname
+        \csname #1_intro\endcsname%
+    \else
+        \textbf{[Reference ``#1`` not yet introduced]}%
+    \fi
+}
