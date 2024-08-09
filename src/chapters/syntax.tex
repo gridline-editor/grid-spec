@@ -1,0 +1,72 @@
+\chapter{Syntax}
+
+This chapter discusses the data representation and structure of a Grid file on 
+an object and file scope.
+
+\section{Character Set}
+
+Grid files, on an atomic level, are comprised of a sequence of 8-bit bytes. Its 
+characater set is a subset of the American Standard Code for Information 
+Interchange (ASCII). There are three classes of characters of which tokens are 
+created from. They are: \textit{text}, \textit{delimiters}, and 
+\textit{whitespace}. These classes apply to all characters in the character set 
+with the exception of those within higher level entities; in such cases, 
+separate rules apply.
+
+\textit{Whitespace} characters (see Table \ref{tab:charset_ws}) separate contiguous \textit{tokens} that would 
+otherwise combine to form a single token. Some 
+Whitespace chatacters, \textit{newline characters} may additionally serve as 
+markers denoting the end of a line.
+
+\begin{table}[ht]
+    \centering
+    \caption{Whitespace characters with their respective representations.}
+    \label{tab:charset_ws}
+    \begin{tabular*}{.8\linewidth}{
+        l@{\extracolsep{\fill}}
+        l@{\extracolsep{\fill}}
+        l@{\extracolsep{\fill}}
+        l}
+        Dec & Hex & Symbol & Name \\
+        \hline
+        09 & 09 & HT & Horizontal Tab \\
+        10 & 0A & LF & Line Feed \\
+        13 & 0D & CR & Carriage Return \\
+        32 & 20 & SP & Space
+    \end{tabular*}
+\end{table}
+
+When a Carriage Return character (CR) immediately preceeds a Line Feed 
+character (LF), they are recognized as a single \textit{newline character} 
+which indicates an End of Line (EOL) marker. By themselves, the CR and LF 
+characters are also \textit{newline characters}. However, they do not not, by 
+themselves, constitute an EOL marker.
+
+\textit{Delimiter} characters (see Table \ref{tab:charset_dlm}) denote the start and end of a higher level entity 
+such as a string or formula. Like whitespace characters, delimiter characters 
+separate sequences of characters that will otherwise combine to form a token. 
+Delimiters should be balanced such that every open delimeter has a 
+corresponding closing delimeter of the same type. These characters are not to 
+be included as part of the entities they terminate or instantiate.
+
+\begin{table}[ht]
+    \centering
+    \caption{Delimiter characters with their respective representations.}
+    \label{tab:charset_dlm}
+    \begin{tabular*}{.8\linewidth}{
+        l@{\extracolsep{\fill}}
+        l@{\extracolsep{\fill}}
+        l@{\extracolsep{\fill}}
+        l}
+        Dec & Hex & Symbol & Name \\
+        \hline
+        37 & 25 & \% & Percent Sign \\
+        40 & 28 & ( & Open Parenthesis \\
+        41 & 29 & ) & Close Parenthesis \\
+        60 & 3C & < & Less Than \\
+        62 & 3E & > & Greater Than \\
+    \end{tabular*}
+\end{table}
+
+\textit{Text} characters are all characters except whitespace and delimiter 
+characters. A sequence of contiguous text characters form a single token.
