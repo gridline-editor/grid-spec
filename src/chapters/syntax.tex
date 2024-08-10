@@ -4,10 +4,9 @@ This chapter discusses the data representation and structure of a Grid file on a
 
 \section{Character Set}
 
-Grid files, on an atomic level, comprise a sequence of 8-bit bytes. Its character set is a subset of the American Standard Code for Information Interchange (ASCII). There are three classes of characters: \preintroref{text}{}, \preintroref{delimiter}{s}, and \preintroref{whitespace}{
-}. These classes apply to all characters in the character set except those within higher-level entities (see Section \ref{sec:tokens}); in such cases, separate rules apply.
+Grid files, on an atomic level, comprise a sequence of 8-bit bytes. Its character set is a subset of the American Standard Code for Information Interchange (ASCII). There are three classes of characters: \preintroref{text}{}, \preintroref{delimiter}{s}, and \preintroref{whitespace}{}. These classes apply to all characters in the character set except those within higher-level entities (see Section \ref{sec:tokens}); in such cases, separate rules apply.
 
-\introref{Whitespace}{} characters (see Table \ref{tab:charset_ws}) separate contiguous lexemes that would otherwise combine to form a single token. Some \postintroref{whitespace} characters, may additionally serve as markers denoting the end of a line. Such characters are called newline characters.
+\introref{Whitespace}{} characters (see Table \ref{tab:charset_ws}) separate contiguous lexemes that would otherwise combine to form a single token. Some \postintroref{whitespace}{} characters, may additionally serve as markers denoting the end of a line. Such characters are called \introref{newline}{} characters.
 
 \begin{table}[ht]
     \centering
@@ -27,9 +26,9 @@ Grid files, on an atomic level, comprise a sequence of 8-bit bytes. Its characte
     \end{tabular*}
 \end{table}
 
-When a Carriage Return character (CR) immediately precedes a Line Feed character (LF), it will be recognized as a single newline character, which indicates an End of Line (EOL) marker. By themselves, the CR and LF characters are also newline characters. However, they do not, by themselves, constitute an EOL marker.
+When a Carriage Return character (CR) immediately precedes a Line Feed character (LF), it will be recognized as a single \postintroref{newline}{} character, which indicates an End of Line (EOL) marker. By themselves, the CR and LF characters are also \postintroref{newline}{} characters. However, they do not, by themselves, constitute an EOL marker.
 
-\introref{Delimiter} characters (see Table \ref{tab:charset_dlm}) denote the start and end of a higher-level entity such as a string or formula. Like \postintroref{whitespace} characters, \postintroref{delimiter}{} characters separate sequences of characters that will otherwise combine to form a token. \postintroref{Delimiter}{s} should be balanced such that every open \postintroref{delimiter}{} has a corresponding closing \postintroref{delimiter}{} of the same type. These characters are not part of the entities they terminate or instantiate.
+\introref{Delimiter}{} characters (see Table \ref{tab:charset_dlm}) denote the start and end of a higher-level entity such as a string or formula. Like \postintroref{whitespace}{} characters, \postintroref{delimiter}{} characters separate sequences of characters that will otherwise combine to form a token. \postintroref{Delimiter}{s} should be balanced such that every open \postintroref{delimiter}{} has a corresponding closing \postintroref{delimiter}{} of the same type. These characters are not part of the entities they terminate or instantiate.
 
 \begin{table}[ht]
     \centering
