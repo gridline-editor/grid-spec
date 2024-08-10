@@ -4,7 +4,6 @@
 *.fls
 *.log
 *.toc
-*.pdf
 aux/
 
 # bear
