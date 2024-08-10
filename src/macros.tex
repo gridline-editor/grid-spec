@@ -4,3 +4,46 @@
 \newcommand{\specverpatch}{1}
 \newcommand{\specverlabel}[1]{-#1}
 \newcommand{\specver}{\specvermajor.\specverminor.\specverpatch\specverlabel{alpha}}
+
+% Introduces a key term
+% #1 base word
+% #2 inflection
+\newcommand{\introref}[2]{%
+    \lowercase{\def\tempkey{#1}}%
+    \ifcsname \tempkey_intro\endcsname
+        \textbf{\textcolor{red}{[Reference ``#1'' already introduced (intro)]}}%
+    \else
+        \expandafter\gdef\csname \tempkey_intro\endcsname{\textit{#1#2}}%
+        \expandafter\gdef\csname \tempkey_post\endcsname{1}%
+        \textit{#1#2}%
+    \fi
+}
+
+% References a key term before being formally introduced
+% #1 base word
+% #2 inflection
+\newcommand{\preintroref}[2]{%
+    \lowercase{\def\tempkey{#1}}%
+    \ifcsname \tempkey_intro\endcsname
+        \textbf{\textcolor{red}{[Reference ``#1'' already introduced (intro)]}}%
+    \else
+        \ifcsname \tempkey_post\endcsname
+            \textbf{\textcolor{red}{[Reference ``#1'' already introduced (post)]}}%
+        \else
+            \expandafter\gdef\csname \tempkey_pre\endcsname{1}%
+            \textit{#1#2}%
+        \fi
+    \fi
+}
+
+% References a key term after being formally introduced
+% #1 base word
+% #2 inflection
+\newcommand{\postintroref}[2]{%
+    \lowercase{\def\tempkey{#1}}%
+    \ifcsname \tempkey_intro\endcsname
+        #1#2%
+    \else
+        \textbf{\textcolor{red}{[Reference ``#1'' not introduced yet (pre-intro)]}}%
+    \fi
+}
