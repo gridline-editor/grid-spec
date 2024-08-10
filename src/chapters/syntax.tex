@@ -1,21 +1,12 @@
 \chapter{Syntax}
 
-This chapter discusses the data representation and structure of a Grid file on 
-an object and file scope.
+This chapter discusses the data representation and structure of a Grid file on an object and file scope.
 
 \section{Character Set}
 
-Grid files, on an atomic level, comprise a sequence of 8-bit bytes. Its 
-character set is a subset of the American Standard Code for Information 
-Interchange (ASCII). There are three classes of characters: \textit{text}, 
-\textit{delimiters}, and \textit{whitespace}. These classes apply to all 
-characters in the character set except those within higher-level entities; in 
-such cases, separate rules apply.
+Grid files, on an atomic level, comprise a sequence of 8-bit bytes. Its character set is a subset of the American Standard Code for Information Interchange (ASCII). There are three classes of characters: \preintroref{text}{}, delimiters, and whitespace. These classes apply to all characters in the character set except those within higher-level entities (see Section \ref{sec:tokens}); in such cases, separate rules apply.
 
-\textit{Whitespace} characters (see Table \ref{tab:charset_ws}) separate 
-contiguous \textit{tokens} that would otherwise combine to form a single token. 
-Some Whitespace characters, \textit{newline characters} may additionally serve 
-as markers denoting the end of a line.
+Whitespace characters (see Table \ref{tab:charset_ws}) separate contiguous lexemes that would otherwise combine to form a single token. Some whitespace characters, may additionally serve as markers denoting the end of a line. Such characters are called newline characters.
 
 \begin{table}[ht]
     \centering
@@ -35,19 +26,9 @@ as markers denoting the end of a line.
     \end{tabular*}
 \end{table}
 
-When a Carriage Return character (CR) immediately precedes a Line Feed 
-character (LF), it will be recognized as a single \textit{newline character}, 
-which indicates an End of Line (EOL) marker. By themselves, the CR and LF 
-characters are also \textit{newline characters}. However, they do not, by 
-themselves, constitute an EOL marker.
+When a Carriage Return character (CR) immediately precedes a Line Feed character (LF), it will be recognized as a single newline character, which indicates an End of Line (EOL) marker. By themselves, the CR and LF characters are also newline characters. However, they do not, by themselves, constitute an EOL marker.
 
-\textit{Delimiter} characters (see Table \ref{tab:charset_dlm}) denote the 
-start and end of a higher-level entity such as a string or formula. Like 
-whitespace characters, delimiter characters separate sequences of characters 
-that will otherwise combine to form a token. Delimiters should be balanced such 
-that every open delimiter has a corresponding closing delimiter of the same 
-type. These characters are not part of the entities they terminate or 
-instantiate.
+Delimiter characters (see Table \ref{tab:charset_dlm}) denote the start and end of a higher-level entity such as a string or formula. Like whitespace characters, delimiter characters separate sequences of characters that will otherwise combine to form a token. Delimiters should be balanced such that every open delimiter has a corresponding closing delimiter of the same type. These characters are not part of the entities they terminate or instantiate.
 
 \begin{table}[ht]
     \centering
@@ -68,5 +49,4 @@ instantiate.
     \end{tabular*}
 \end{table}
 
-\textit{Text} characters are all printable characters except whitespace and 
-delimiters. A sequence of contiguous text characters forms a single token.
+\introref{Text}{} characters are all printable characters except whitespace and delimiters.
