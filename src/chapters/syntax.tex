@@ -6,7 +6,7 @@ This chapter discusses the data representation and structure of a Grid file on a
 
 Grid files, on an atomic level, comprise a sequence of 8-bit bytes. Its character set is a subset of the American Standard Code for Information Interchange (ASCII). There are three classes of characters: \preintroref{text}{}, \preintroref{delimiter}{s}, and \preintroref{whitespace}{}. These classes apply to all characters in the character set except those within higher-level entities (see Section \ref{sec:tokens}); in such cases, separate rules apply.
 
-\introref{Whitespace}{} characters (see Table \ref{tab:charset_ws}) separate contiguous lexemes that would otherwise combine to form a single token. Some \postintroref{whitespace}{} characters, may additionally serve as markers denoting the end of a line. Such characters are called \introref{newline}{} characters.
+\introref{Whitespace}{} characters (see Table \ref{tab:charset_ws}) separate contiguous \preintroref{lexeme}{s} that would otherwise combine to form a single token. Some \postintroref{whitespace}{} characters, may additionally serve as markers denoting the end of a line. Such characters are called \introref{newline}{} characters.
 
 \begin{table}[ht]
     \centering
