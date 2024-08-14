@@ -63,6 +63,7 @@ the entities they terminate or instantiate.
         l}
         Dec & Hex & Symbol & Name \\
         \hline
+        36 & 24 & \$ & Dollar Sign \\
         37 & 25 & \% & Percent Sign \\
         40 & 28 & ( & Open Parenthesis \\
         41 & 29 & ) & Close Parenthesis \\
@@ -73,3 +74,25 @@ the entities they terminate or instantiate.
 
 \introref{Text}{} characters are all printable characters except 
 \postintroref{whitespace}{} and \postintroref{delimiter}{s}.
+
+\section{Tokens}
+\label{sec:tokens}
+
+\subsection{Identifiers}
+
+An \introref{Identifier}{} is a distinctive lablel used to refer to 
+\postintroref{token}{} types of the \postintroref{data}{} class. It is a 
+sequence of one or more alphanumeric characters of arbitrary length. A dollar 
+sign character (\$) must be the first character and it must be followed by a 
+letter. While the dollar sign is not part of the \postintroref{identifier}{} 
+name, itself, it does indicate that the following sequence of 
+\postintroref{text}{} characters are. Uppercase and lowercase characters are 
+distinct such that \lstinline[language=grid]!$x! and 
+\lstinline[language=grid]!$X! are not the same. The following are examples of 
+valid \postintroref{identifier}{s}:
+
+\begin{lstlisting}[language=grid]
+$n
+$HelloWorld
+$C2x2
+\end{lstlisting}
