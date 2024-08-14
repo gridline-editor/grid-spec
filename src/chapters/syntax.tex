@@ -78,6 +78,33 @@ the entities they terminate or instantiate.
 \section{Tokens}
 \label{sec:tokens}
 
+A \introref{lexeme}{} is the smallest meaningful element in a syntax. They are 
+the made up of the maximum sequence of contiguous characters that satisfy the 
+conditions established by the initial character. Conditions determine the 
+bounds of the \postintroref{lexeme}{} and the type of \preintroref{token}{}. A 
+\introref{token}{} is an comprised of a \postintroref{lexeme}{} and its 
+corresponding type. A \postintroref{lexeme}{} type and \postintroref{token}{} 
+type are synonymous.
+
+A \postintroref{token}{} type can be categorized into two classes: 
+\preintroref{data}{}, and \preintroref{non-data}. \postintroref{Token}{s} 
+belonging to the \introref{data}{} class contain textual or numerical values, 
+which can be represented by the following token types:
+
+\begin{itemize}
+    \item \preintroref{Identifier}{}
+    \item \preintroref{Literal}{}
+\end{itemize}
+
+Unlike their counterparts, \introref{non-data}{} types do not hold values. 
+Rather, they tether \postintroref{data}{} token types together or allow them to 
+be distinguishable from eachother. Such \postintroref{token}{s} can be 
+represented by the following types:
+
+\begin{itemize}
+    \item \postintroref{Delimiter}{}
+\end{itemize}
+
 \subsection{Identifiers}
 
 An \introref{Identifier}{} is a distinctive lablel used to refer to 
