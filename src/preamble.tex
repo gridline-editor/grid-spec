@@ -1,5 +1,6 @@
 % font
 \usepackage[T1]{fontenc}
+\usepackage{FiraMono}
 \usepackage{arev}
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -25,4 +26,17 @@
 \titleformat{\chapter}{\normalfont\huge\bfseries}{\thesection\quad|}{20pt}{\Huge}
 
 % color
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
+
+% code environment
+\usepackage{listings}
+\lstset{
+    basicstyle=\ttfamily,
+    commentstyle=\itshape\textcolor{gray},
+    identifierstyle=\textcolor{black},
+    tabsize=8,
+    linewidth=\codewidth,
+    xleftmargin=\codemarginl
+}
+
+\lstdefinelanguage{grid}{morecomment=[l]{\%}}
