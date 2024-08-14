@@ -149,3 +149,19 @@ another underscore.The following are examples of valid decimal
 1_000_000
 -24_250
 \end{lstlisting}
+
+An \postintroref{integer literal}{} represented by a hexadecimal number is 
+comprised of a \lstinline[language=grid]!0x!- prefix followed by a sequence of 
+ASCII digits (0-9) and letters (A-F and a-f).  Hexadecimal numbers may be also 
+use underscores (\_) to break the sequence into more readable chunks. An 
+underscore must not immediately follow another underscore. Hexadecimal 
+representations should not be prefixed with a negative sign.
+
+The following are examples of valid integer literals:
+
+\begin{lstlisting}[language=grid]
+0x12a4
+0xfabC
+0x1aaa_0000
+0x0001_fade
+\end{lstlisting}
